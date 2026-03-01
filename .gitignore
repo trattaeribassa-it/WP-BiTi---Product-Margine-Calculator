@@ -1,48 +1,40 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# WordPress / Plugin repo .gitignore
+# (Works whether this repo is "plugin-only" or you keep a full WP install alongside.)
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.code-workspace
 
-# Configuration
+# Logs / temp
+*.log
+*.tmp
+*.bak
+*.cache
+.phpunit.result.cache
+
+# Dependency folders (keep out of git unless you intentionally vendor them)
+node_modules/
+vendor/
+
+# Build artifacts
+dist/
+build/
+*.map
+
+# Secrets / env
+.env
+.env.*
 wp-config.php
 
-# Example themes
-/wp-content/themes/twenty*/
-
-# Example plugin
-/wp-content/plugins/hello.php
-
-# Uploads
+# If you ever store a full WordPress install in this repo, ignore core + runtime folders
+/wp-admin/
+/wp-includes/
+/wp-content/cache/
 /wp-content/uploads/
-
-# Log files
-*.log
-
-# htaccess
-/.htaccess
-
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+/wp-content/upgrade/
+/wp-content/backup*/
